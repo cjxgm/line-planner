@@ -1,0 +1,10 @@
+#!/usr/bin/sh
+TITLE="$1"
+DATE="`date +%F@%T`"
+FILENAME="$DATE ${TITLE}.png"
+FULLNAME="history/$FILENAME"
+mkdir -p history
+dot -Tpng > "$FULLNAME"
+cd history
+feh "$FILENAME" &
+
